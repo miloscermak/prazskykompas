@@ -36,13 +36,14 @@ const QUESTIONS = [
 // Pevné pořadí otázek (střídání os X a Y, aby nešly za sebou otázky stejné osy)
 const ORDER = [1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 17, 8, 18, 9, 19, 10, 20];
 
-// Škála odpovědí (shora dolů na mobilu, zleva doprava na desktopu)
+// Škála odpovědí (shora dolů na mobilu, zleva doprava na desktopu, klávesy 1–5 ve stejném pořadí):
+// od nesouhlasu k souhlasu, aby souhlas byl vpravo
 const ANSWER_SCALE = [
-  { label: "Rozhodně souhlasím",    value:  2 },
-  { label: "Spíš souhlasím",        value:  1 },
-  { label: "Nevím / je mi to jedno", value: 0 },
-  { label: "Spíš nesouhlasím",      value: -1 },
   { label: "Rozhodně nesouhlasím",  value: -2 },
+  { label: "Spíš nesouhlasím",      value: -1 },
+  { label: "Nevím / je mi to jedno", value: 0 },
+  { label: "Spíš souhlasím",        value:  1 },
+  { label: "Rozhodně souhlasím",    value:  2 },
 ];
 
 // Rozstřely (mimo skóre): dvě bonusové otázky za sebou.
