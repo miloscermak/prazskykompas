@@ -2,7 +2,7 @@
 
 Klikací webová aplikace pro pražské komunální volby 9. a 10. 10. 2026: 20 výroků + 2 bonusové rozstřely → pozice na mapě Prahy, „tvůj primátor" (nejbližší kandidující subjekt) a sdílecí kartička (PNG). Hra, ne sociologie, ne volební doporučení. Celý průchod pod 3 minuty.
 
-Fork Českého kompasu (`github.com/miloscermak/kompas`); tento repozitář je samostatný (`github.com/miloscermak/prazskykompas`). **Koncept, otázky s kódováním a rešerše jsou v `../koncept.md`, `../otazky.md` a `../reserse.md`; předávací protokol v `../predavaci-protokol.md`. Před prací na featurách je přečti.**
+Fork Českého kompasu (`github.com/miloscermak/kompas`); tento repozitář je samostatný (`github.com/miloscermak/prazskykompas`). **Koncept, otázky s kódováním a rešerše jsou v `koncept.md`, `otazky.md` a `reserse.md`; předávací protokol v `predavaci-protokol.md`. Před prací na featurách je přečti.**
 
 ## Stack a struktura
 
@@ -32,7 +32,7 @@ Fork Českého kompasu (`github.com/miloscermak/kompas`); tento repozitář je s
 ## Zásady práce
 
 - Editace otázek a subjektů v `data.js` nesmí vyžadovat zásah do logiky. Po změně subjektů spustit `node sim.js` (pokrytí, dominance, dvojčata, podíl odhadů).
-- `node test.js` musí projít (61 testů). Testy skóre subjektů jsou napsané proti tabulce v `../otazky.md`; při změně kódování je přepiš vědomě.
+- `node test.js` musí projít (61 testů). Testy skóre subjektů jsou napsané proti tabulce v `otazky.md`; při změně kódování je přepiš vědomě.
 - Texty a mikrocopy: `index.html` (intro, disclaimer, popisky), `data.js` (kvadranty, rozstřely), `metodika.html` (článek). Miloš je reviduje; neměnit tón bez zadání.
 - Žádné souhrnné statistiky z uložených výsledků před volbami (zákon o volbách do zastupitelstev obcí zakazuje zveřejňovat průzkumy od 3. dne před volbami; kompas není průzkum, ale souhrny „jak odpovídala Praha" až po volbách).
 

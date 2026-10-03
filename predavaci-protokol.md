@@ -4,7 +4,7 @@ Sobota 3. 10. 2026, dopoledne. Předává Claude (Cowork), přebírá Miloš s C
 
 ## 1. Co je hotové
 
-Složka `web/` je kompletní, nasaditelný web. Fork Českého kompasu se stejným enginem (vanilla HTML/CSS/JS, bez buildu, funguje přes `file://` i https).
+Repo je kompletní, nasaditelný web. Fork Českého kompasu se stejným enginem (vanilla HTML/CSS/JS, bez buildu, funguje přes `file://` i https).
 
 | Soubor | Stav |
 |---|---|
@@ -35,14 +35,14 @@ Jedna věc k vědomí: v kvadrantu auta + domov vyhrává častěji SPD (12 % ma
 
 ### Git a GitHub
 
-Hotovo (3. 10. 2026): samostatné veřejné repo [`github.com/miloscermak/prazskykompas`](https://github.com/miloscermak/prazskykompas), lokálně `~/prazskykompas`. Dokumenty (`koncept.md`, `otazky.md`, `reserse.md`, tento protokol, `nahledy/`) jsou v kořeni, web ve `web/`. Repo je veřejné, takže dokumenty jsou veřejné taky, což je ta transparentnost, kterou slibujeme; `#repo-link` v `metodika.html` míří na kořen repa.
+Hotovo (3. 10. 2026): samostatné veřejné repo [`github.com/miloscermak/prazskykompas`](https://github.com/miloscermak/prazskykompas), lokálně `~/prazskykompas`. Web i dokumenty (`koncept.md`, `otazky.md`, `reserse.md`, tento protokol, `nahledy/`) jsou v kořeni repa, žádná podsložka. Repo je veřejné, takže dokumenty jsou veřejné taky, což je ta transparentnost, kterou slibujeme; `#repo-link` v `metodika.html` míří na kořen repa.
 
 Repo Českého kompasu (`github.com/miloscermak/kompas`) zůstává samostatné. Je v něm ještě kopie `kompas-praha/` z prvního pushe; po ověření nového repa se dá smazat.
 
 ### Netlify
 
 1. Netlify → Add new site → Import from GitHub → repo `prazskykompas`.
-2. **Base directory:** `web`. **Publish directory:** `web` (Netlify ho předvyplní podle `netlify.toml` v base adresáři). Build command prázdný.
+2. Base directory, publish directory i build command nech prázdné (`netlify.toml` v kořeni nastaví publish na `.`).
 3. Deploy. Zkontroluj dočasnou URL: průchod, kartička (na kartičce se tiskne skutečná doména), `metodika.html`.
 4. Domain settings → Add custom domain `prazskykompas.inspiruj.se` → u registrátora inspiruj.se přidej CNAME na adresu Netlify webu (stejně jako u Českého kompasu). HTTPS Netlify vystaví sám.
 
