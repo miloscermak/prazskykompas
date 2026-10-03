@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jak Pražský kompas počítá: dvě osy, dvacet výroků, kompletní kódovací tabulka kandidujících subjektů a vzorec pro „tvého primátora". Všechno veřejně, všechno opravitelné.">
+  <title>Jak to počítáme · Pražský kompas 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="article">
+  <a class="back-link" href="index.html">← Zpět na kompas</a>
+
+  <h1>Jak to počítáme <span class="article-sub">(a jak si to můžete zkontrolovat)</span></h1>
+
+  <p>Pražský kompas je hra, ne průzkum a ne volební doporučení. Ale je to hra s otevřenými kartami: tady je všechno, co o výpočtu potřebujete vědět, včetně kompletní tabulky, podle které jsme kandidujícím subjektům přiřadili místo na mapě. Když v ní najdete chybu, napište nám. Když s ní nesouhlasí strana, může poslat vlastní odpovědi a my je nasadíme.</p>
+
+  <h2>Dvě osy</h2>
+
+  <p>Z pražských sporů posledních čtyř let vypadly čtyři štěpné linie: auta proti lidem, růst proti klidu, peníze (co se 180 miliardami na účtech) a pořádek. Kompas unese dvě. Vybrali jsme ty, které se navzájem kříží, ne překrývají: kdybychom vzali osu „město má samo stavět a regulovat" proti „nechat to trhu", mapa by se sesypala na diagonálu, protože kdo chce cyklopruhy, chce obvykle i městské byty.</p>
+
+  <p><strong>Vodorovná osa: Auta ↔ Lidé.</strong> Komu patří ulice. Vlevo Praha, kde se autem dá všude dojet a zaparkovat. Vpravo Praha, kde má přednost tramvaj, kolo a chodník, a auto ustupuje.</p>
+
+  <p><strong>Svislá osa: Domov ↔ Metropole.</strong> Jak rychle a pro koho má Praha růst. Nahoře velkoměsto: stavět výš, hustěji a rychleji, velké projekty, otevřené turistům, nočnímu životu i nově příchozím. Dole město pro ty, kdo tu žijí: klid, zeleň, pořádek, limity pro developery, Airbnb i rozlučkové párty.</p>
+
+  <p>Na každou osu připadá deset výroků. Odpověď má hodnotu od −2 (rozhodně nesouhlasím) do +2 (rozhodně souhlasím). Část výroků je obrácených, aby test nezvýhodňoval lidi, kteří ze zdvořilosti souhlasí se vším. Skóre na ose je prostý součet, takže se pohybuje od −20 do +20. Žádné váhy, žádná magie.</p>
+
+  <h2>Kvadranty</h2>
+  <div class="table-scroll"><table id="t-quadrants"></table></div>
+  <p>Kdo skončí blízko středu (nejvýš 4 body od nuly na obou osách), nedostane kvadrant, ale <strong>Pražský kompromis</strong>. Nula si zaslouží jméno.</p>
+
+  <h2>Dvacet výroků</h2>
+  <div class="table-scroll"><table id="t-questions"></table></div>
+
+  <h2>Kde stojí kandidující subjekty</h2>
+
+  <p>Tohle je ta důležitá část. Každý subjekt „odpověděl" na stejných dvacet výroků jako vy, na stejné škále, a jeho bod na mapě se spočítal stejným vzorcem. Odpovědi jsme odvodili z volebních programů, z veřejných výroků lídrů v kampani (ankety Echo24, Deníku, iROZHLASu, debaty CNN Prima a ČT) a z hlasování zastupitelstva. U každé odpovědi uvádíme, jak jsme si jistí: <strong>P</strong> je to v programu, <strong>V</strong> veřejný výrok lídra nebo strany, <strong>H</strong> hlasování nebo skutek v zastupitelstvu, <strong>O</strong> odhad z obecné linie strany. Odhad je nejslabší kategorie. Proto na mapě zobrazujeme jen subjekty, u kterých jsme z programu a výroků dokázali obsadit aspoň polovinu výroků bez odhadu; ostatní kandidující subjekty, které jsme zpracovali, jsou v tabulce níž označené jako vypnuté a do výsledku nevstupují. Kterýkoli z nich se na mapu dostane ve chvíli, kdy nám pošle vlastní odpovědi.</p>
+
+  <div class="table-scroll"><table id="t-subjects"></table></div>
+
+  <h2>Kódovací tabulka</h2>
+  <p>Řádky jsou výroky, sloupce subjekty. Modrá buňka = souhlas, červená = nesouhlas, šedá = neutrální nebo bez postoje. Písmeno za číslem je jistota (P, V, H, O). Zdůvodnění a zdroje ke každé buňce jsou v souboru <code>otazky.md</code> v repozitáři (odkaz dole).</p>
+  <div class="table-scroll"><table id="t-coding"></table></div>
+
+  <h2>Rozstřely</h2>
+  <p>Dvě bonusové otázky se do mapy nepočítají. Na výsledkovce u nich ukazujeme, které subjekty by odpověděly stejně; i tohle je náš odhad z kampaně.</p>
+  <div class="table-scroll"><table id="t-shootouts"></table></div>
+
+  <h2>Tvůj primátor</h2>
+  <p>Váš výsledek je bod na mapě. „Tvůj primátor" je lídr toho subjektu, jehož bod je nejblíž: obyčejná euklidovská vzdálenost ve dvou rozměrech. Procento říká, jak blízko jste: 100 % znamená stejné souřadnice, 0 % protilehlé rohy mapy. Pozor, je to blízkost na naší mapě, ne shoda s programem. Proto ukazujeme pořadí všech subjektů: když je druhý v pořadí o dva body dál, je to prakticky remíza.</p>
+
+  <h2>Co když strana nesouhlasí</h2>
+  <p>Každý kandidující subjekt může poslat vlastní odpovědi na stejných dvacet výroků a oba rozstřely. Nasadíme je do 24 hodin, na výsledkovce i tady označíme „autorizováno" a změnu zveřejníme. Dokud to neudělá, platí naše kódování s uvedenými zdroji.</p>
+
+  <h2>Co ukládáme</h2>
+  <p>Žádné cookies, žádná analytika třetích stran. Po dokončení testu se anonymně uloží výsledek a odpovědi na jednotlivé otázky do tabulky, bez jména, bez IP adresy, bez čehokoliv osobního. Demografické otázky na konci jsou dobrovolné. Sdílený odkaz neukládá nic. Souhrnné statistiky zveřejníme až po volbách.</p>
+
+  <h2>Zdroje a kód</h2>
+  <p>Celý web je otevřený: otázky, kódování i výpočet jsou v jednom datovém souboru, který si může kdokoli přečíst a přepočítat. Rešerše s odkazy na programy a výroky, zdůvodnění každé buňky kódovací tabulky a historie změn otázek jsou v repozitáři na GitHubu: <a id="repo-link" href="https://github.com/miloscermak/prazskykompas" target="_blank" rel="noopener">github.com/miloscermak/prazskykompas</a>.</p>
+
+  <hr class="article-hr">
+
+  <p>Ještě jedna věc. Dvacet otázek a tři minuty nejsou volební program a tahle mapa není jediná možná. Je to pokus převést pražskou debatu z hesel na konkrétní věci, o kterých se dá rozhodnout: cyklopruh, modrá zóna, mrakodrap, večerka po desáté. Když vás výsledek naštve, je to dobře. Pošlete ho někomu, kdo to vidí jinak.</p>
+
+  <p><a class="btn btn-primary article-cta" href="index.html">Zkusit kompas</a></p>
+</main>
+
+<div class="inspiruj-badge">
+  <!-- ===== Štítek Inspiruj.se, SVĚTLÁ varianta ===== -->
+  <a href="https://inspiruj.se" target="_blank" rel="noopener" style="display:block;box-sizing:border-box;max-width:560px;margin:0 auto;padding:26px 30px;background:#FAF8F4;border:1px solid #E8E1D3;border-radius:16px;text-decoration:none;font-family:'Space Grotesk','Segoe UI',system-ui,-apple-system,sans-serif;color:#1A1815;line-height:1.55;">
+    <span style="display:inline-flex;align-items:center;font-weight:500;font-size:22px;letter-spacing:-0.025em;color:#1A1815;">inspiruj<svg width="15" height="15" viewBox="0 0 100 100" style="margin:0 3px;flex:none;" aria-hidden="true"><path d="M50 2 C54 34 66 46 98 50 C66 54 54 66 50 98 C46 66 34 54 2 50 C34 46 46 34 50 2 Z" fill="#C67700"/></svg>se</span>
+    <span style="display:block;margin-top:10px;font-size:15px;color:#1A1815;">Tento web je projektem Inspiruj.se. Přemýšlíme, píšeme a mluvíme o&nbsp;tom, jak používat nebo nepoužívat AI. Od roku 2023 prošlo našimi masterclassy, workshopy a&nbsp;přednáškami přes 14&nbsp;000 lidí. Inspirujeme ty, kteří chtějí rozumět éře AI.</span>
+  </a>
+  <!-- ===== konec štítku ===== -->
+</div>
+
+<script src="data.js"></script>
+<script src="scoring.js"></script>
+<script>
+(function () {
+  "use strict";
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const AXIS_NAME = { 1: "Auta ↔ Lidé", 2: "Domov ↔ Metropole" };
+  const poleLabel = (q) => (q.axis === 1 ? (q.pole === 1 ? "Lidé" : "Auta") : (q.pole === 1 ? "Metropole" : "Domov"));
+  const fmt = (n) => (n > 0 ? "+" + n : String(n));
+  const active = SUBJECTS.filter((s) => s.active !== false);
+
+  // Kvadranty
+  const qrows = [
+    ["volant", "Auta + Metropole"], ["kolo", "Lidé + Metropole"],
+    ["klid", "Auta + Domov"], ["sousedstvi", "Lidé + Domov"], ["center", "Střed"],
+  ];
+  $("#t-quadrants").innerHTML = "<tr><th>Kde</th><th>Název</th><th>Popisek</th></tr>" + qrows.map(([k, where]) => {
+    const q = QUADRANTS[k];
+    return "<tr><td>" + where + "</td><td><strong>" + esc(q.name) + "</strong>" + (q.nick ? " („" + esc(q.nick) + "“)" : "") + "</td><td>" + esc(q.desc) + "</td></tr>";
+  }).join("");
+
+  // Otázky
+  $("#t-questions").innerHTML = "<tr><th class=\"num\">#</th><th>Výrok</th><th>Osa</th><th>Souhlas táhne k</th></tr>" + QUESTIONS.map((q) =>
+    "<tr><td class=\"num\">" + q.id + "</td><td>" + esc(q.text) + "</td><td>" + AXIS_NAME[q.axis] + "</td><td>" + poleLabel(q) + "</td></tr>"
+  ).join("");
+
+  // Subjekty
+  $("#t-subjects").innerHTML = "<tr><th>Subjekt</th><th>Lídr</th><th class=\"num\">X</th><th class=\"num\">Y</th><th>Kvadrant</th><th>Kódování</th><th class=\"num\">Odhadů</th></tr>" + SUBJECTS.map((s) => {
+    const sc = subjectScores(s, QUESTIONS);
+    const q = getQuadrant(sc, QUADRANTS);
+    const o = Object.values(s.conf).filter((c) => c === "O").length;
+    const src = s.active === false ? "vypnuto" : (s.source === "autorizováno" ? "autorizováno stranou" : "z programu a výroků");
+    return "<tr><td><span class=\"swatch\" style=\"background:" + s.color + "\"></span><strong>" + esc(s.name) + "</strong><br><small>" + esc(s.full) + "</small></td><td>" + esc(s.leader) + "</td><td class=\"num\">" + fmt(sc[0]) + "</td><td class=\"num\">" + fmt(sc[1]) + "</td><td>" + esc(q.name) + "</td><td>" + src + "</td><td class=\"num\">" + o + "/20</td></tr>";
+  }).join("");
+
+  // Kódovací tabulka
+  const head = "<tr><th class=\"num\">#</th><th>Výrok (zkráceně)</th>" + SUBJECTS.map((s) => "<th title=\"" + esc(s.full) + "\">" + esc(s.name) + "</th>").join("") + "</tr>";
+  const short = (t) => (t.length > 60 ? t.slice(0, 57).replace(/\s+\S*$/, "") + "…" : t);
+  const body = QUESTIONS.map((q) =>
+    "<tr><td class=\"num\">" + q.id + "</td><td title=\"" + esc(q.text) + "\">" + esc(short(q.text)) + "</td>" + SUBJECTS.map((s) => {
+      const v = s.answers[q.id];
+      const cls = v > 0 ? "cell-pos" : v < 0 ? "cell-neg" : "cell-zero";
+      return "<td class=\"num " + cls + "\">" + fmt(v) + "<span class=\"conf\">" + s.conf[q.id] + "</span></td>";
+    }).join("") + "</tr>"
+  ).join("");
+  const foot = "<tr><th></th><th>Skóre X / Y</th>" + SUBJECTS.map((s) => { const sc = subjectScores(s, QUESTIONS); return "<th class=\"num\">" + fmt(sc[0]) + " / " + fmt(sc[1]) + "</th>"; }).join("") + "</tr>";
+  $("#t-coding").innerHTML = head + body + foot;
+
+  // Rozstřely
+  $("#t-shootouts").innerHTML = SHOOTOUTS.map((sh, i) =>
+    "<tr><th colspan=\"2\">" + esc(sh.text) + "</th></tr>" + sh.options.map((o, j) => {
+      const same = sameShootout(i, j, active).map((s) => s.name);
+      return "<tr><td>" + o.icon + " " + esc(o.label) + "</td><td>" + (same.length ? esc(same.join(", ")) : "<em>žádný subjekt</em>") + "</td></tr>";
+    }).join("")
+  ).join("");
+})();
+</script>
+</body>
+</html>
