@@ -78,7 +78,7 @@ const QUADRANTS = {
 // --- Ukládání výsledků (Google Apps Script) ---
 // URL webhooku z nasazení apps-script/webhook.gs (návod v README.md).
 // Prázdný řetězec = nic se neodesílá (vývojový režim, payload jde do konzole).
-const WEBHOOK_URL = "";
+const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxmvfhBhIpfRzj-aWeO6BILLSG8_x7gGm7cI723BEuHEbs2ZG11EutBqSFMyIUE3SbTqg/exec";
 
 // --- Demografický průzkum (dobrovolný, na výsledkovce) ---
 // type: "pills" (tlačítka, výchozí) nebo "select" (rozbalovací seznam pro dlouhé výčty)
