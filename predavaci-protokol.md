@@ -4,7 +4,7 @@ Sobota 3. 10. 2026, dopoledne. Předává Claude (Cowork), přebírá Miloš s C
 
 ## 1. Co je hotové
 
-Složka `kompas-praha/web/` je kompletní, nasaditelný web. Fork Českého kompasu se stejným enginem (vanilla HTML/CSS/JS, bez buildu, funguje přes `file://` i https).
+Složka `web/` je kompletní, nasaditelný web. Fork Českého kompasu se stejným enginem (vanilla HTML/CSS/JS, bez buildu, funguje přes `file://` i https).
 
 | Soubor | Stav |
 |---|---|
@@ -19,7 +19,7 @@ Složka `kompas-praha/web/` je kompletní, nasaditelný web. Fork Českého komp
 | `apps-script/webhook.gs` | Upravený webhook: list `praha`, sloupce pro primátora, oba rozstřely a městskou část. |
 | `README.md`, `CLAUDE.md`, `netlify.toml`, `.gitignore` | Návod pro editaci dat, kontext pro Claude Code, konfigurace Netlify. |
 
-Ověřeno v headless Chromiu (mobil 390 px i desktop): celý průchod, výsledkovka, kartička, sdílený odkaz, metodika. Žádné chyby v konzoli. Náhledy jsou v `kompas-praha/nahledy/`. Payload bez metodiky cca 64 kB.
+Ověřeno v headless Chromiu (mobil 390 px i desktop): celý průchod, výsledkovka, kartička, sdílený odkaz, metodika. Žádné chyby v konzoli. Náhledy jsou v `nahledy/`. Payload bez metodiky cca 64 kB.
 
 ## 2. Rozhodnutí o subjektech (uzavřeno 3. 10. dopoledne)
 
@@ -35,23 +35,14 @@ Jedna věc k vědomí: v kvadrantu auta + domov vyhrává častěji SPD (12 % ma
 
 ### Git a GitHub
 
-Doporučuju variantu A, je nejrychlejší:
+Hotovo (3. 10. 2026): samostatné veřejné repo [`github.com/miloscermak/prazskykompas`](https://github.com/miloscermak/prazskykompas), lokálně `~/prazskykompas`. Dokumenty (`koncept.md`, `otazky.md`, `reserse.md`, tento protokol, `nahledy/`) jsou v kořeni, web ve `web/`. Repo je veřejné, takže dokumenty jsou veřejné taky, což je ta transparentnost, kterou slibujeme; `#repo-link` v `metodika.html` míří na kořen repa.
 
-**A) Složka v repu `kompas`.** `kompas-praha/` včetně `web/` prostě commitni a pushni do `github.com/miloscermak/kompas`. Repo je veřejné, takže `koncept.md`, `otazky.md` a `reserse.md` budou veřejné taky, což je přesně ta transparentnost, kterou slibujeme (metodika na ně odkazuje: `#repo-link` v `metodika.html` míří na `github.com/miloscermak/kompas/tree/main/kompas-praha`).
-
-```
-cd ~/kompas
-git add kompas-praha
-git commit -m "Pražský kompas 2026: koncept, otázky, rešerše a web"
-git push
-```
-
-**B) Samostatné repo `prazsky-kompas`.** Čistší pro Netlify, ale musíš založit repo a zkopírovat i dokumenty. Pak uprav `#repo-link` v `metodika.html`.
+Repo Českého kompasu (`github.com/miloscermak/kompas`) zůstává samostatné. Je v něm ještě kopie `kompas-praha/` z prvního pushe; po ověření nového repa se dá smazat.
 
 ### Netlify
 
-1. Netlify → Add new site → Import from GitHub → repo `kompas`.
-2. **Base directory:** `kompas-praha/web`. **Publish directory:** `kompas-praha/web` (Netlify ho předvyplní podle `netlify.toml` v base adresáři). Build command prázdný.
+1. Netlify → Add new site → Import from GitHub → repo `prazskykompas`.
+2. **Base directory:** `web`. **Publish directory:** `web` (Netlify ho předvyplní podle `netlify.toml` v base adresáři). Build command prázdný.
 3. Deploy. Zkontroluj dočasnou URL: průchod, kartička (na kartičce se tiskne skutečná doména), `metodika.html`.
 4. Domain settings → Add custom domain `prazskykompas.inspiruj.se` → u registrátora inspiruj.se přidej CNAME na adresu Netlify webu (stejně jako u Českého kompasu). HTTPS Netlify vystaví sám.
 
