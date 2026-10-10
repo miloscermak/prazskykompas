@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Praha pro auta, nebo pro lidi? Metropole, nebo domov? Dvacet pražských výroků, tvoje místo na mapě Prahy a kandidát na primátora, který je ti nejblíž. Tři minuty.">
+  <meta property="og:title" content="Pražský kompas 2026">
+  <meta property="og:description" content="Kde jsi na mapě Prahy a kdo z kandidátů na primátora je tvůj dvojník? Dvacet výroků, tři minuty, hra, ne sociologie.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prazskykompas.inspiruj.se/kompas/">
+  <meta property="og:image" content="https://prazskykompas.inspiruj.se/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pražský kompas 2026">
+  <meta name="twitter:description" content="Kde jsi na mapě Prahy a kdo z kandidátů na primátora je tvůj dvojník? Dvacet výroků, tři minuty, hra, ne sociologie.">
+  <meta name="twitter:image" content="https://prazskykompas.inspiruj.se/og.png">
+  <title>Pražský kompas 2026</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<main>
+
+  <!-- ÚVOD -->
+  <section id="screen-intro" class="screen">
+    <div class="intro-badge">Hra, ne sociologie</div>
+    <h1>Pražský kompas <span class="year">2026</span></h1>
+    <p class="subtitle">Kde jsi na mapě Prahy?</p>
+    <p class="intro-text">Praha pro auta, nebo pro lidi? Metropole, nebo domov? Dvacet výroků o věcech, které v Praze opravdu řešíme: cyklopruhy, modré zóny, Airbnb, mrakodrapy, večerky po desáté. Žádné přemýšlení, střílej od pasu. Na konci se dozvíš, kde na mapě Prahy stojíš a kdo z kandidátů na primátora je ti nejblíž. Volby jsou 9. a 10. října. Tak jedem.</p>
+    <button id="btn-start" class="btn btn-primary">Chci hlasovat</button>
+    <p class="hint">Odpovídat můžeš i klávesami 1–5</p>
+  </section>
+
+  <!-- OTÁZKY -->
+  <section id="screen-question" class="screen" hidden>
+    <div class="q-header">
+      <button id="btn-back" class="btn-back" aria-label="Zpět na předchozí otázku">←</button>
+      <div class="progress" role="progressbar" aria-valuemin="1" aria-valuemax="20" aria-valuenow="1" aria-label="Průběh testu">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-label" id="progress-label">1/20</div>
+    </div>
+    <div class="q-card" id="q-card">
+      <p class="q-text" id="q-text"></p>
+      <div class="answers" id="answers"></div>
+    </div>
+  </section>
+
+  <!-- ROZSTŘELY (dvě bonusové otázky) -->
+  <section id="screen-shootout" class="screen" hidden>
+    <div class="q-header">
+      <button id="btn-back-shootout" class="btn-back" aria-label="Zpět na předchozí otázku">←</button>
+      <div class="shootout-badge">⚡ Bonusový rozstřel</div>
+    </div>
+    <div class="q-card shootout-card" id="shootout-card">
+      <p class="q-text" id="shootout-text"></p>
+      <div class="answers" id="shootout-options"></div>
+    </div>
+  </section>
+
+  <!-- VÝSLEDEK -->
+  <section id="screen-result" class="screen" hidden>
+    <p class="res-label">Tvoje Praha</p>
+    <h2 id="res-quadrant"></h2>
+    <p class="res-nick" id="res-nick"></p>
+    <p class="res-desc" id="res-quadrant-desc"></p>
+
+    <div class="map-wrap">
+      <span class="map-axis map-axis-top">Metropole</span>
+      <div class="map-row">
+        <span class="map-axis map-axis-left">Auta</span>
+        <div class="map" id="res-map" aria-hidden="true">
+          <div class="map-q map-q-tl"><span>Metropole za volantem</span></div>
+          <div class="map-q map-q-tr"><span>Velkoměsto na kole</span></div>
+          <div class="map-q map-q-bl"><span>Klid s parkovacím místem</span></div>
+          <div class="map-q map-q-br"><span>Sousedství s tramvají</span></div>
+          <div class="map-grid-h"></div>
+          <div class="map-grid-v"></div>
+          <div class="map-subjects" id="map-subjects"></div>
+          <div class="map-point" id="map-point"></div>
+        </div>
+        <span class="map-axis map-axis-right">Lidé</span>
+      </div>
+      <span class="map-axis map-axis-bottom">Domov</span>
+      <button id="btn-toggle-subjects" class="map-toggle" type="button" aria-pressed="true">Skrýt strany na mapě</button>
+    </div>
+
+    <div class="twin-block">
+      <p class="res-label">Tvůj primátor</p>
+      <div class="twin">
+        <div class="twin-circle" id="twin-circle"></div>
+        <div class="twin-info">
+          <div class="twin-name"><span id="twin-name"></span> <span class="twin-match" id="twin-match"></span></div>
+          <div class="twin-subject" id="twin-subject"></div>
+          <div class="twin-desc" id="twin-desc"></div>
+        </div>
+      </div>
+      <ol class="ranking" id="ranking" aria-label="Pořadí všech kandidujících subjektů podle blízkosti"></ol>
+      <p class="ranking-note">Procento je blízkost na mapě, ne shoda s programem. Jak to počítáme, je <a href="../metodika.html">tady</a>.</p>
+    </div>
+
+    <div class="verdicts">
+      <div class="verdict" id="verdict-1">
+        <div class="threat-block"><span id="s1-icon" class="threat-icon" aria-hidden="true"></span><span id="s1-text"></span></div>
+        <p class="verdict-same" id="s1-same"></p>
+      </div>
+      <div class="verdict" id="verdict-2">
+        <div class="threat-block"><span id="s2-icon" class="threat-icon" aria-hidden="true"></span><span id="s2-text"></span></div>
+        <p class="verdict-same" id="s2-same"></p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="btn-download" class="btn btn-primary">Stáhnout kartičku</button>
+      <button id="btn-copy" class="btn btn-secondary">Zkopírovat odkaz</button>
+      <button id="btn-retry" class="btn btn-secondary">Zkusit znovu</button>
+      <button id="btn-try" class="btn btn-primary" hidden>Zkus to taky</button>
+    </div>
+
+    <!-- Dobrovolný demografický průzkum (jen po vlastním průchodu, ne u sdíleného odkazu) -->
+    <div class="demo-block" id="demo-block" hidden>
+      <div id="demo-inner">
+        <p class="demo-title">Pomůžeš se statistikou? Čtyři rychlé otázky, žádné osobní údaje.</p>
+        <div id="demo-questions"></div>
+        <div class="demo-actions">
+          <button id="btn-demo-send" class="btn btn-primary">Odeslat</button>
+          <button id="btn-demo-skip" class="btn btn-secondary">Přeskočit</button>
+        </div>
+      </div>
+      <p class="demo-thanks" id="demo-thanks" hidden>Díky! 🙏</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="disclaimer">
+  Hra, ne průzkum a ne volební doporučení. Pozice stran jsme odhadli z jejich programů a výroků, metodika je veřejná a strany ji mohou opravit. Žádné cookies, žádné sledování, ukládáme jen anonymní odpovědi pro souhrnnou statistiku.
+</footer>
+
+<div class="made-link">
+  <a href="../metodika.html">Jak to počítáme →</a> &nbsp;·&nbsp; <a href="../">Náš odhad výsledku voleb →</a>
+</div>
+
+<div class="inspiruj-badge">
+  <!-- ===== Štítek Inspiruj.se, SVĚTLÁ varianta ===== -->
+  <a href="https://inspiruj.se" target="_blank" rel="noopener" style="display:block;box-sizing:border-box;max-width:560px;margin:0 auto;padding:26px 30px;background:#FAF8F4;border:1px solid #E8E1D3;border-radius:16px;text-decoration:none;font-family:'Space Grotesk','Segoe UI',system-ui,-apple-system,sans-serif;color:#1A1815;line-height:1.55;">
+    <span style="display:inline-flex;align-items:center;font-weight:500;font-size:22px;letter-spacing:-0.025em;color:#1A1815;">inspiruj<svg width="15" height="15" viewBox="0 0 100 100" style="margin:0 3px;flex:none;" aria-hidden="true"><path d="M50 2 C54 34 66 46 98 50 C66 54 54 66 50 98 C46 66 34 54 2 50 C34 46 46 34 50 2 Z" fill="#C67700"/></svg>se</span>
+    <span style="display:block;margin-top:10px;font-size:15px;color:#1A1815;">Tento web je projektem Inspiruj.se. Přemýšlíme, píšeme a mluvíme o&nbsp;tom, jak používat nebo nepoužívat AI. Od roku 2023 prošlo našimi masterclassy, workshopy a&nbsp;přednáškami přes 14&nbsp;000 lidí. Inspirujeme ty, kteří chtějí rozumět éře AI.</span>
+  </a>
+  <!-- ===== konec štítku ===== -->
+</div>
+
+<script src="../data.js"></script>
+<script src="../scoring.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

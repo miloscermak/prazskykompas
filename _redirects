@@ -1,0 +1,5 @@
+# Staré sdílené výsledky kompasu (?r=...) vedou na přestěhovaný kompas
+/  r=:r  /kompas/?r=:r  302
+# Původní adresa odhadu
+/odhad  /  301
+/odhad/  /  301

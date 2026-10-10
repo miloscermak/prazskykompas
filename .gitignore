@@ -4,3 +4,4 @@
 
 # Datové exporty (nepatří do veřejného repa)
 *.csv
+odhad/artifact.html

@@ -7,7 +7,8 @@ Fork Českého kompasu (`github.com/miloscermak/kompas`); tento repozitář je s
 ## Stack a struktura
 
 - Vanilla HTML + CSS + JS. **Žádný framework, žádný build krok, žádné externí knihovny** (kartička přes Canvas API).
-- Soubory: `index.html`, `style.css`, `app.js`, `scoring.js`, `data.js` (otázky + subjekty jako JS modul kvůli file://), `metodika.html` (generuje se z `data.js`), `README.md` (návod na editaci dat pro neprogramátora).
+- **Po volbách (od 10. 10. 2026 14:00):** hlavní stránka `index.html` je odhad výsledku voleb (generuje se z `odhad/`, viz `odhad/README.md`); kompas samotný běží na `kompas/index.html` (skripty a styl bere z kořene přes `../`). Staré sdílené odkazy `?r=` na kořeni přesměrovává `_redirects` i skript v hlavičce.
+- Soubory: `kompas/index.html` (aplikace), `style.css`, `app.js`, `scoring.js`, `data.js` (otázky + subjekty jako JS modul kvůli file://), `metodika.html` (generuje se z `data.js`), `README.md` (návod na editaci dat pro neprogramátora).
 - Hosting: Netlify, bez build kroku (`netlify.toml`, publish `.`). Cílová doména `prazskykompas.inspiruj.se`.
 - **Musí fungovat přes `file://` i https**, proto data v `data.js`, ne fetch JSON.
 

@@ -1,0 +1,1231 @@
+{
+ "generated_at": "2026-10-10T07:42:34+00:00",
+ "source_sha256": "7d3f5229bccb8a6cb438252e658f551961ffeea621a4a5410576e0c7c48e3040",
+ "source_rows": 3848,
+ "first_ts": "2026-10-03T12:24:09.043Z",
+ "last_ts": "2026-10-10T06:32:20.901Z",
+ "cleaning": {
+  "dropped": {
+   "pod 20 sekund": 30,
+   "bydlí mimo Prahu": 100,
+   "všechny odpovědi stejné": 11
+  },
+  "kept": 3707,
+  "with_demo": 1105,
+  "without_demo": 2602,
+  "imputed_in_prague": 2396
+ },
+ "parties": [
+  "Spolu pro Prahu",
+  "ANO",
+  "Piráti",
+  "STAN",
+  "Praha sobě",
+  "SPD a spol.",
+  "Motoristé sobě"
+ ],
+ "colors": {
+  "Spolu pro Prahu": "#1450b4",
+  "ANO": "#1a8fb5",
+  "Piráti": "#1c1b33",
+  "STAN": "#b45309",
+  "Praha sobě": "#b3271d",
+  "SPD a spol.": "#6b4f2a",
+  "Motoristé sobě": "#374151"
+ },
+ "subject_xy": {
+  "Spolu pro Prahu": [
+   -12.0,
+   4.0
+  ],
+  "ANO": [
+   -18.0,
+   -1.0
+  ],
+  "Piráti": [
+   17.0,
+   1.0
+  ],
+  "STAN": [
+   9.0,
+   3.0
+  ],
+  "Praha sobě": [
+   11.0,
+   -8.0
+  ],
+  "SPD a spol.": [
+   -14.0,
+   0.0
+  ],
+  "Motoristé sobě": [
+   -20.0,
+   11.0
+  ]
+ },
+ "tau": {
+  "xy": 4.09,
+  "q20": 0.88,
+  "target_top_prob": 0.55,
+  "mean_top_prob_xy": 0.55
+ },
+ "targets": {
+  "age": {
+   "u25": 0.055,
+   "26_40": 0.215,
+   "41_60": 0.34,
+   "60p": 0.39
+  },
+  "gender": {
+   "muz": 0.475,
+   "zena": 0.525
+  },
+  "education": {
+   "zs": 0.1,
+   "ss": 0.52,
+   "vs": 0.38
+  },
+  "zone": {
+   "centrum": 0.147735708982925,
+   "vnitrni": 0.4491462509279881,
+   "sidliste": 0.24870081662954716,
+   "okraj": 0.1544172234595397
+  },
+  "zone_label": {
+   "centrum": "Centrum (P1, 2, 3, 7)",
+   "vnitrni": "Vnitřní město (P4, 5, 6, 8, 9, 10)",
+   "sidliste": "Sídliště a vnější čtvrti (P11 až 15, 17, 18)",
+   "okraj": "Okraj a malé MČ (P16, 19 až 22, jinde)"
+  }
+ },
+ "weights": {
+  "cap": 8,
+  "mean_by_group": {
+   "age": {
+    "41_60": 0.91,
+    "60p": 8.29,
+    "26_40": 0.51,
+    "u25": 0.46
+   },
+   "gender": {
+    "muz": 0.64,
+    "zena": 2.02
+   },
+   "education": {
+    "vs": 0.51,
+    "ss": 2.26,
+    "zs": 3.34
+   },
+   "zone": {
+    "vnitrni": 0.74,
+    "centrum": 0.65,
+    "okraj": 2.69,
+    "sidliste": 2.06
+   }
+  },
+  "max": 8.29,
+  "min": 0.0
+ },
+ "sample_vs_prague": {
+  "age": {
+   "sample": {
+    "u25": 13.5,
+    "26_40": 43.5,
+    "41_60": 38.6,
+    "60p": 4.4
+   },
+   "target": {
+    "u25": 5.5,
+    "26_40": 21.5,
+    "41_60": 34.0,
+    "60p": 39.0
+   },
+   "labels": {
+    "u25": "do 25",
+    "26_40": "26 až 40",
+    "41_60": "41 až 60",
+    "60p": "přes 60"
+   }
+  },
+  "gender": {
+   "sample": {
+    "muz": 73.8,
+    "zena": 26.2
+   },
+   "target": {
+    "muz": 47.5,
+    "zena": 52.5
+   },
+   "labels": {
+    "muz": "muži",
+    "zena": "ženy"
+   }
+  },
+  "education": {
+   "sample": {
+    "zs": 3.0,
+    "ss": 23.3,
+    "vs": 73.7
+   },
+   "target": {
+    "zs": 10.0,
+    "ss": 52.0,
+    "vs": 38.0
+   },
+   "labels": {
+    "zs": "základní",
+    "ss": "střední",
+    "vs": "vysokoškolské"
+   }
+  },
+  "zone": {
+   "sample": {
+    "centrum": 22.2,
+    "vnitrni": 59.6,
+    "sidliste": 12.3,
+    "okraj": 5.9
+   },
+   "target": {
+    "centrum": 14.8,
+    "vnitrni": 44.9,
+    "sidliste": 24.9,
+    "okraj": 15.4
+   },
+   "labels": {
+    "centrum": "Centrum (P1, 2, 3, 7)",
+    "vnitrni": "Vnitřní město (P4, 5, 6, 8, 9, 10)",
+    "sidliste": "Sídliště a vnější čtvrti (P11 až 15, 17, 18)",
+    "okraj": "Okraj a malé MČ (P16, 19 až 22, jinde)"
+   }
+  }
+ },
+ "estimates": {
+  "A": {
+   "name": "Co říká kompas",
+   "desc": "Nejbližší subjekt, nevážené, všichni bydlící v Praze po vyčištění.",
+   "n": 3707,
+   "shares": {
+    "Spolu pro Prahu": {
+     "share": 19.0
+    },
+    "ANO": {
+     "share": 1.7
+    },
+    "Piráti": {
+     "share": 14.2
+    },
+    "STAN": {
+     "share": 37.8
+    },
+    "Praha sobě": {
+     "share": 18.7
+    },
+    "SPD a spol.": {
+     "share": 7.0
+    },
+    "Motoristé sobě": {
+     "share": 1.6
+    }
+   },
+   "seats": {
+    "Spolu pro Prahu": 13,
+    "ANO": 0,
+    "Piráti": 9,
+    "STAN": 26,
+    "Praha sobě": 13,
+    "SPD a spol.": 4,
+    "Motoristé sobě": 0
+   }
+  },
+  "A2": {
+   "name": "Kompas, měkké afinity",
+   "desc": "Každý respondent rozdělen mezi subjekty podle vzdálenosti na mapě, nevážené.",
+   "n": 3707,
+   "shares": {
+    "Spolu pro Prahu": {
+     "share": 14.0,
+     "lo": 13.5,
+     "hi": 14.5
+    },
+    "ANO": {
+     "share": 5.2,
+     "lo": 5.0,
+     "hi": 5.5
+    },
+    "Piráti": {
+     "share": 17.3,
+     "lo": 16.7,
+     "hi": 17.9
+    },
+    "STAN": {
+     "share": 31.0,
+     "lo": 30.3,
+     "hi": 31.7
+    },
+    "Praha sobě": {
+     "share": 19.2,
+     "lo": 18.7,
+     "hi": 19.8
+    },
+    "SPD a spol.": {
+     "share": 10.3,
+     "lo": 9.9,
+     "hi": 10.6
+    },
+    "Motoristé sobě": {
+     "share": 3.0,
+     "lo": 2.8,
+     "hi": 3.2
+    }
+   },
+   "seats": {
+    "Spolu pro Prahu": 9,
+    "ANO": 3,
+    "Piráti": 12,
+    "STAN": 21,
+    "Praha sobě": 13,
+    "SPD a spol.": 7,
+    "Motoristé sobě": 0
+   }
+  },
+  "B": {
+   "name": "Kompas převážený na Prahu",
+   "desc": "Měkké afinity, jen respondenti s demografií, převážené na strukturu pražského elektorátu (věk, pohlaví, vzdělání, část Prahy).",
+   "n": 1105,
+   "neff": 168,
+   "shares": {
+    "Spolu pro Prahu": {
+     "share": 16.8,
+     "lo": 14.3,
+     "hi": 19.1
+    },
+    "ANO": {
+     "share": 6.0,
+     "lo": 4.9,
+     "hi": 7.1
+    },
+    "Piráti": {
+     "share": 11.2,
+     "lo": 9.6,
+     "hi": 13.4
+    },
+    "STAN": {
+     "share": 27.0,
+     "lo": 24.5,
+     "hi": 30.0
+    },
+    "Praha sobě": {
+     "share": 23.5,
+     "lo": 20.4,
+     "hi": 26.5
+    },
+    "SPD a spol.": {
+     "share": 11.8,
+     "lo": 10.2,
+     "hi": 13.2
+    },
+    "Motoristé sobě": {
+     "share": 3.7,
+     "lo": 2.4,
+     "hi": 5.2
+    }
+   },
+   "seats": {
+    "Spolu pro Prahu": 11,
+    "ANO": 4,
+    "Piráti": 7,
+    "STAN": 19,
+    "Praha sobě": 16,
+    "SPD a spol.": 8,
+    "Motoristé sobě": 0
+   },
+   "headline": true
+  },
+  "B2": {
+   "name": "B s dopočtenou demografií",
+   "desc": "Jako B, ale respondentům bez demografie je dopočtena z deseti nejpodobnějších (podle odpovědí). Citlivostní zkouška.",
+   "n": 3501,
+   "neff": 532,
+   "shares": {
+    "Spolu pro Prahu": {
+     "share": 20.3,
+     "lo": 18.9,
+     "hi": 21.5
+    },
+    "ANO": {
+     "share": 6.8,
+     "lo": 6.2,
+     "hi": 7.4
+    },
+    "Piráti": {
+     "share": 9.4,
+     "lo": 8.6,
+     "hi": 10.4
+    },
+    "STAN": {
+     "share": 25.7,
+     "lo": 24.2,
+     "hi": 27.4
+    },
+    "Praha sobě": {
+     "share": 19.8,
+     "lo": 18.3,
+     "hi": 21.3
+    },
+    "SPD a spol.": {
+     "share": 14.0,
+     "lo": 13.1,
+     "hi": 14.8
+    },
+    "Motoristé sobě": {
+     "share": 4.1,
+     "lo": 3.3,
+     "hi": 4.8
+    }
+   },
+   "seats": {
+    "Spolu pro Prahu": 14,
+    "ANO": 4,
+    "Piráti": 6,
+    "STAN": 18,
+    "Praha sobě": 14,
+    "SPD a spol.": 9,
+    "Motoristé sobě": 0
+   }
+  },
+  "B3": {
+   "name": "B přes 20 odpovědí",
+   "desc": "Jako B, ale vzdálenost k subjektům měřená přes všech 20 odpovědí, ne přes 2D mapu.",
+   "n": 1105,
+   "shares": {
+    "Spolu pro Prahu": {
+     "share": 19.9
+    },
+    "ANO": {
+     "share": 6.4
+    },
+    "Piráti": {
+     "share": 10.2
+    },
+    "STAN": {
+     "share": 25.8
+    },
+    "Praha sobě": {
+     "share": 24.9
+    },
+    "SPD a spol.": {
+     "share": 7.4
+    },
+    "Motoristé sobě": {
+     "share": 5.5
+    }
+   },
+   "seats": {
+    "Spolu pro Prahu": 13,
+    "ANO": 4,
+    "Piráti": 6,
+    "STAN": 17,
+    "Praha sobě": 17,
+    "SPD a spol.": 5,
+    "Motoristé sobě": 3
+   }
+  },
+  "Bh": {
+   "name": "B s tvrdým přiřazením",
+   "desc": "Jako B, ale každý respondent celý nejbližšímu subjektu (bez měkkých afinit).",
+   "n": 1105,
+   "shares": {
+    "Spolu pro Prahu": {
+     "share": 25.1
+    },
+    "ANO": {
+     "share": 1.6
+    },
+    "Piráti": {
+     "share": 5.8
+    },
+    "STAN": {
+     "share": 31.1
+    },
+    "Praha sobě": {
+     "share": 29.0
+    },
+    "SPD a spol.": {
+     "share": 4.7
+    },
+    "Motoristé sobě": {
+     "share": 2.8
+    }
+   },
+   "seats": {
+    "Spolu pro Prahu": 18,
+    "ANO": 0,
+    "Piráti": 4,
+    "STAN": 22,
+    "Praha sobě": 21,
+    "SPD a spol.": 0,
+    "Motoristé sobě": 0
+   }
+  },
+  "C": {
+   "name": "Kompas + průzkumy",
+   "desc": "B smíchané s průměrem zveřejněných průzkumů; váha kompasu u každé strany podle toho, jak moc se s průzkumy shoduje. Jen pro srovnání.",
+   "n": 1105,
+   "shares": {
+    "Spolu pro Prahu": {
+     "share": 15.8
+    },
+    "ANO": {
+     "share": 15.1
+    },
+    "Piráti": {
+     "share": 10.4
+    },
+    "STAN": {
+     "share": 23.6
+    },
+    "Praha sobě": {
+     "share": 17.0
+    },
+    "SPD a spol.": {
+     "share": 7.8
+    },
+    "Motoristé sobě": {
+     "share": 3.8
+    }
+   },
+   "seats": {
+    "Spolu pro Prahu": 12,
+    "ANO": 11,
+    "Piráti": 7,
+    "STAN": 18,
+    "Praha sobě": 12,
+    "SPD a spol.": 5,
+    "Motoristé sobě": 0
+   },
+   "other": 6.5
+  }
+ },
+ "B_unweighted_demo_only": {
+  "Spolu pro Prahu": 12.04,
+  "ANO": 4.34,
+  "Piráti": 20.51,
+  "STAN": 31.32,
+  "Praha sobě": 20.68,
+  "SPD a spol.": 8.48,
+  "Motoristé sobě": 2.61
+ },
+ "polls": {
+  "Median (31. 8. až 3. 9.)": {
+   "ANO": 23.3,
+   "STAN": 22.6,
+   "Spolu pro Prahu": 13.9,
+   "Praha sobě": 12.9,
+   "Piráti": 10.8,
+   "SPD a spol.": 5.4,
+   "Motoristé sobě": 5.0
+  },
+  "Ipsos pro ODS (srpen)": {
+   "Spolu pro Prahu": 23.4,
+   "STAN": 17.9,
+   "ANO": 17.6,
+   "Piráti": 11.9,
+   "Praha sobě": 11.9
+  }
+ },
+ "poll_avg": {
+  "Spolu pro Prahu": 18.6,
+  "ANO": 20.5,
+  "Piráti": 11.4,
+  "STAN": 20.2,
+  "Praha sobě": 12.4,
+  "SPD a spol.": 5.4,
+  "Motoristé sobě": 5.0
+ },
+ "results_2022": {
+  "Spolu pro Prahu": 24.72,
+  "ANO": 19.34,
+  "Piráti": 17.73,
+  "Praha sobě": 14.73,
+  "STAN": 7.77,
+  "SPD a spol.": 5.17,
+  "Motoristé sobě": 2.29
+ },
+ "results_ps2025_praha": {
+  "Spolu pro Prahu": 33.94,
+  "ANO": 19.9,
+  "Piráti": 16.85,
+  "STAN": 13.37,
+  "SPD a spol.": 5.24,
+  "Motoristé sobě": 5.16
+ },
+ "quadrants": {
+  "raw": {
+   "Velkoměsto na kole": 29.6,
+   "Sousedství s tramvají": 27.3,
+   "Metropole za volantem": 17.8,
+   "Pražský kompromis": 16.3,
+   "Klid s parkovacím místem": 9.0
+  },
+  "weighted": {
+   "Sousedství s tramvají": 31.8,
+   "Metropole za volantem": 23.5,
+   "Velkoměsto na kole": 20.3,
+   "Pražský kompromis": 14.9,
+   "Klid s parkovacím místem": 9.5
+  }
+ },
+ "problem": {
+  "raw": {
+   "Drahé byty": 50.9,
+   "Doprava a parkování": 23.0,
+   "Pomalý magistrát, nic se nestaví": 13.8,
+   "Feťáci, bezdomovci a nepořádek": 9.2,
+   "Turisté a Airbnb": 3.2
+  },
+  "weighted": {
+   "Drahé byty": 43.6,
+   "Doprava a parkování": 31.2,
+   "Feťáci, bezdomovci a nepořádek": 12.6,
+   "Pomalý magistrát, nic se nestaví": 11.0,
+   "Turisté a Airbnb": 1.6
+  }
+ },
+ "miliardy": {
+  "raw": {
+   "Utratit za okruh a metro": 66.4,
+   "Utratit za byty": 24.8,
+   "Šetřit dál, velké stavby teprve přijdou": 5.4,
+   "Vrátit Pražanům: levná MHD a parkování": 3.3
+  },
+  "weighted": {
+   "Utratit za okruh a metro": 75.2,
+   "Utratit za byty": 15.3,
+   "Šetřit dál, velké stavby teprve přijdou": 7.3,
+   "Vrátit Pražanům: levná MHD a parkování": 2.2
+  }
+ },
+ "agree": [
+  {
+   "id": 1,
+   "text": "Cyklopruhy na hlavních tazích by měly zmizet.",
+   "axis": 1,
+   "agree_raw": 44.2,
+   "disagree_raw": 46.0,
+   "agree_w": 57.6,
+   "disagree_w": 33.0,
+   "mean_raw": -0.02,
+   "mean_w": 0.43
+  },
+  {
+   "id": 2,
+   "text": "Rezidentní parkování má stát aspoň tolik co roční Lítačka.",
+   "axis": 1,
+   "agree_raw": 69.1,
+   "disagree_raw": 22.8,
+   "agree_w": 62.7,
+   "disagree_w": 32.4,
+   "mean_raw": 0.81,
+   "mean_w": 0.49
+  },
+  {
+   "id": 3,
+   "text": "Auta nerezidentů mají z Malé Strany a nábřeží zmizet.",
+   "axis": 1,
+   "agree_raw": 70.8,
+   "disagree_raw": 19.7,
+   "agree_w": 69.9,
+   "disagree_w": 21.6,
+   "mean_raw": 0.81,
+   "mean_w": 0.77
+  },
+  {
+   "id": 4,
+   "text": "V obytných ulicích má platit třicítka.",
+   "axis": 1,
+   "agree_raw": 52.6,
+   "disagree_raw": 37.6,
+   "agree_w": 49.1,
+   "disagree_w": 38.8,
+   "mean_raw": 0.2,
+   "mean_w": 0.09
+  },
+  {
+   "id": 5,
+   "text": "Když se nevejde všechno, má ustoupit auto.",
+   "axis": 1,
+   "agree_raw": 58.9,
+   "disagree_raw": 32.0,
+   "agree_w": 53.3,
+   "disagree_w": 40.0,
+   "mean_raw": 0.41,
+   "mean_w": 0.2
+  },
+  {
+   "id": 6,
+   "text": "Magistrála má být normální městská třída.",
+   "axis": 1,
+   "agree_raw": 57.8,
+   "disagree_raw": 33.9,
+   "agree_w": 59.6,
+   "disagree_w": 35.8,
+   "mean_raw": 0.38,
+   "mean_w": 0.36
+  },
+  {
+   "id": 7,
+   "text": "Zácpy se řeší novými silnicemi a tunely.",
+   "axis": 1,
+   "agree_raw": 72.9,
+   "disagree_raw": 18.2,
+   "agree_w": 83.4,
+   "disagree_w": 10.0,
+   "mean_raw": 0.87,
+   "mean_w": 1.14
+  },
+  {
+   "id": 8,
+   "text": "Parkovací místa v centru mají postupně mizet.",
+   "axis": 1,
+   "agree_raw": 74.0,
+   "disagree_raw": 19.4,
+   "agree_w": 71.5,
+   "disagree_w": 22.4,
+   "mean_raw": 0.8,
+   "mean_w": 0.72
+  },
+  {
+   "id": 9,
+   "text": "Dvorecký most je správně bez aut.",
+   "axis": 1,
+   "agree_raw": 68.2,
+   "disagree_raw": 14.4,
+   "agree_w": 67.5,
+   "disagree_w": 18.0,
+   "mean_raw": 0.95,
+   "mean_w": 0.86
+  },
+  {
+   "id": 10,
+   "text": "Rezidentní karta má platit v celé Praze.",
+   "axis": 1,
+   "agree_raw": 45.2,
+   "disagree_raw": 40.9,
+   "agree_w": 60.6,
+   "disagree_w": 28.6,
+   "mean_raw": 0.07,
+   "mean_w": 0.57
+  },
+  {
+   "id": 11,
+   "text": "Praha potřebuje mrakodrapy.",
+   "axis": 2,
+   "agree_raw": 57.0,
+   "disagree_raw": 30.2,
+   "agree_w": 50.9,
+   "disagree_w": 38.7,
+   "mean_raw": 0.45,
+   "mean_w": 0.23
+  },
+  {
+   "id": 12,
+   "text": "Na uvolněném pozemku raději park než byty.",
+   "axis": 2,
+   "agree_raw": 20.9,
+   "disagree_raw": 69.4,
+   "agree_w": 22.6,
+   "disagree_w": 71.0,
+   "mean_raw": -0.67,
+   "mean_w": -0.61
+  },
+  {
+   "id": 13,
+   "text": "Airbnb v bytových domech zakázat nebo omezit.",
+   "axis": 2,
+   "agree_raw": 58.8,
+   "disagree_raw": 29.6,
+   "agree_w": 57.9,
+   "disagree_w": 30.5,
+   "mean_raw": 0.44,
+   "mean_w": 0.39
+  },
+  {
+   "id": 14,
+   "text": "Večerky v centru po desáté bez alkoholu.",
+   "axis": 2,
+   "agree_raw": 36.2,
+   "disagree_raw": 47.4,
+   "agree_w": 38.7,
+   "disagree_w": 43.2,
+   "mean_raw": -0.19,
+   "mean_w": -0.03
+  },
+  {
+   "id": 15,
+   "text": "Turisté mají platit víc (200 Kč za noc).",
+   "axis": 2,
+   "agree_raw": 72.8,
+   "disagree_raw": 15.9,
+   "agree_w": 71.2,
+   "disagree_w": 19.6,
+   "mean_raw": 0.88,
+   "mean_w": 0.8
+  },
+  {
+   "id": 16,
+   "text": "Vltavskou filharmonii postavit, i kdyby ji Praha platila sama.",
+   "axis": 2,
+   "agree_raw": 51.1,
+   "disagree_raw": 27.6,
+   "agree_w": 53.6,
+   "disagree_w": 29.5,
+   "mean_raw": 0.34,
+   "mean_w": 0.36
+  },
+  {
+   "id": 17,
+   "text": "Stavební povolení do roka, jinak platí automaticky.",
+   "axis": 2,
+   "agree_raw": 48.7,
+   "disagree_raw": 39.5,
+   "agree_w": 52.7,
+   "disagree_w": 38.2,
+   "mean_raw": 0.15,
+   "mean_w": 0.19
+  },
+  {
+   "id": 18,
+   "text": "Deset tisíc bytů ročně, i za cenu hustší zástavby.",
+   "axis": 2,
+   "agree_raw": 64.6,
+   "disagree_raw": 25.5,
+   "agree_w": 50.9,
+   "disagree_w": 38.4,
+   "mean_raw": 0.6,
+   "mean_w": 0.14
+  },
+  {
+   "id": 19,
+   "text": "Sdílené koloběžky do centra patří.",
+   "axis": 2,
+   "agree_raw": 25.0,
+   "disagree_raw": 59.1,
+   "agree_w": 17.9,
+   "disagree_w": 68.0,
+   "mean_raw": -0.56,
+   "mean_w": -0.74
+  },
+  {
+   "id": 20,
+   "text": "Kdo spí v parku nebo v metru, má být vykázán.",
+   "axis": 2,
+   "agree_raw": 46.5,
+   "disagree_raw": 36.1,
+   "agree_w": 57.2,
+   "disagree_w": 31.8,
+   "mean_raw": 0.17,
+   "mean_w": 0.36
+  }
+ ],
+ "by_group": {
+  "age": {
+   "u25": {
+    "n": 149,
+    "shares": {
+     "Spolu pro Prahu": 11.27,
+     "ANO": 3.46,
+     "Piráti": 23.83,
+     "STAN": 30.84,
+     "Praha sobě": 20.39,
+     "SPD a spol.": 7.35,
+     "Motoristé sobě": 2.87
+    }
+   },
+   "26_40": {
+    "n": 481,
+    "shares": {
+     "Spolu pro Prahu": 10.8,
+     "ANO": 3.52,
+     "Piráti": 23.84,
+     "STAN": 33.29,
+     "Praha sobě": 19.51,
+     "SPD a spol.": 7.08,
+     "Motoristé sobě": 1.97
+    }
+   },
+   "41_60": {
+    "n": 426,
+    "shares": {
+     "Spolu pro Prahu": 12.9,
+     "ANO": 5.12,
+     "Piráti": 17.0,
+     "STAN": 30.41,
+     "Praha sobě": 21.83,
+     "SPD a spol.": 9.78,
+     "Motoristé sobě": 2.96
+    }
+   },
+   "60p": {
+    "n": 49,
+    "shares": {
+     "Spolu pro Prahu": 19.17,
+     "ANO": 8.33,
+     "Piráti": 8.36,
+     "STAN": 21.49,
+     "Praha sobě": 23.05,
+     "SPD a spol.": 14.45,
+     "Motoristé sobě": 5.15
+    }
+   }
+  },
+  "gender": {
+   "muz": {
+    "n": 815,
+    "shares": {
+     "Spolu pro Prahu": 12.99,
+     "ANO": 4.68,
+     "Piráti": 21.56,
+     "STAN": 31.85,
+     "Praha sobě": 16.99,
+     "SPD a spol.": 8.78,
+     "Motoristé sobě": 3.15
+    }
+   },
+   "zena": {
+    "n": 290,
+    "shares": {
+     "Spolu pro Prahu": 9.38,
+     "ANO": 3.39,
+     "Piráti": 17.59,
+     "STAN": 29.84,
+     "Praha sobě": 31.05,
+     "SPD a spol.": 7.64,
+     "Motoristé sobě": 1.12
+    }
+   }
+  },
+  "education": {
+   "zs": {
+    "n": 33,
+    "shares": {
+     "Spolu pro Prahu": 18.63,
+     "ANO": 5.65,
+     "Piráti": 15.5,
+     "STAN": 31.2,
+     "Praha sobě": 13.56,
+     "SPD a spol.": 11.49,
+     "Motoristé sobě": 3.98
+    }
+   },
+   "ss": {
+    "n": 258,
+    "shares": {
+     "Spolu pro Prahu": 15.13,
+     "ANO": 5.22,
+     "Piráti": 16.77,
+     "STAN": 28.83,
+     "Praha sobě": 19.92,
+     "SPD a spol.": 10.8,
+     "Motoristé sobě": 3.33
+    }
+   },
+   "vs": {
+    "n": 814,
+    "shares": {
+     "Spolu pro Prahu": 10.8,
+     "ANO": 4.01,
+     "Piráti": 21.91,
+     "STAN": 32.12,
+     "Praha sobě": 21.21,
+     "SPD a spol.": 7.63,
+     "Motoristé sobě": 2.33
+    }
+   }
+  }
+ },
+ "by_district": {
+  "jinde": {
+   "n": 32,
+   "shares": {
+    "Spolu pro Prahu": 14.73,
+    "ANO": 7.61,
+    "Piráti": 13.74,
+    "STAN": 30.41,
+    "Praha sobě": 19.0,
+    "SPD a spol.": 11.42,
+    "Motoristé sobě": 3.09
+   },
+   "xy": [
+    1.9,
+    0.1
+   ]
+  },
+  "p1": {
+   "n": 30,
+   "shares": {
+    "Spolu pro Prahu": 8.79,
+    "ANO": 4.14,
+    "Piráti": 21.69,
+    "STAN": 29.25,
+    "Praha sobě": 27.07,
+    "SPD a spol.": 8.0,
+    "Motoristé sobě": 1.06
+   },
+   "xy": [
+    6.0,
+    -1.9
+   ]
+  },
+  "p10": {
+   "n": 100,
+   "shares": {
+    "Spolu pro Prahu": 11.82,
+    "ANO": 4.26,
+    "Piráti": 18.89,
+    "STAN": 33.34,
+    "Praha sobě": 20.72,
+    "SPD a spol.": 7.67,
+    "Motoristé sobě": 3.3
+   },
+   "xy": [
+    4.7,
+    0.6
+   ]
+  },
+  "p11": {
+   "n": 25,
+   "shares": {
+    "Spolu pro Prahu": 14.0,
+    "ANO": 4.71,
+    "Piráti": 14.76,
+    "STAN": 33.34,
+    "Praha sobě": 20.4,
+    "SPD a spol.": 10.42,
+    "Motoristé sobě": 2.37
+   },
+   "xy": [
+    3.0,
+    -0.1
+   ]
+  },
+  "p12": {
+   "n": 29,
+   "shares": {
+    "Spolu pro Prahu": 10.98,
+    "ANO": 3.55,
+    "Piráti": 16.75,
+    "STAN": 32.33,
+    "Praha sobě": 26.59,
+    "SPD a spol.": 8.63,
+    "Motoristé sobě": 1.18
+   },
+   "xy": [
+    4.7,
+    -1.4
+   ]
+  },
+  "p13": {
+   "n": 19,
+   "shares": {
+    "Spolu pro Prahu": 21.48,
+    "ANO": 4.48,
+    "Piráti": 15.7,
+    "STAN": 20.8,
+    "Praha sobě": 22.44,
+    "SPD a spol.": 11.46,
+    "Motoristé sobě": 3.64
+   },
+   "xy": [
+    3.1,
+    1.2
+   ]
+  },
+  "p14": {
+   "n": 20,
+   "shares": {
+    "Spolu pro Prahu": 5.05,
+    "ANO": 1.93,
+    "Piráti": 17.33,
+    "STAN": 35.31,
+    "Praha sobě": 35.31,
+    "SPD a spol.": 4.66,
+    "Motoristé sobě": 0.41
+   },
+   "xy": [
+    7.2,
+    -2.9
+   ]
+  },
+  "p15": {
+   "n": 18,
+   "shares": {
+    "Spolu pro Prahu": 11.0,
+    "ANO": 3.65,
+    "Piráti": 11.96,
+    "STAN": 44.37,
+    "Praha sobě": 16.88,
+    "SPD a spol.": 8.15,
+    "Motoristé sobě": 3.99
+   },
+   "xy": [
+    2.6,
+    0.8
+   ]
+  },
+  "p18": {
+   "n": 19,
+   "shares": {
+    "Spolu pro Prahu": 19.36,
+    "ANO": 6.69,
+    "Piráti": 10.25,
+    "STAN": 24.25,
+    "Praha sobě": 17.78,
+    "SPD a spol.": 15.54,
+    "Motoristé sobě": 6.13
+   },
+   "xy": [
+    -0.9,
+    -0.4
+   ]
+  },
+  "p2": {
+   "n": 70,
+   "shares": {
+    "Spolu pro Prahu": 8.03,
+    "ANO": 3.11,
+    "Piráti": 30.27,
+    "STAN": 28.75,
+    "Praha sobě": 21.16,
+    "SPD a spol.": 5.32,
+    "Motoristé sobě": 3.36
+   },
+   "xy": [
+    7.6,
+    0.7
+   ]
+  },
+  "p3": {
+   "n": 77,
+   "shares": {
+    "Spolu pro Prahu": 7.25,
+    "ANO": 3.63,
+    "Piráti": 27.37,
+    "STAN": 35.81,
+    "Praha sobě": 17.82,
+    "SPD a spol.": 5.71,
+    "Motoristé sobě": 2.4
+   },
+   "xy": [
+    7.1,
+    1.1
+   ]
+  },
+  "p4": {
+   "n": 125,
+   "shares": {
+    "Spolu pro Prahu": 15.11,
+    "ANO": 5.22,
+    "Piráti": 19.76,
+    "STAN": 31.42,
+    "Praha sobě": 16.23,
+    "SPD a spol.": 10.23,
+    "Motoristé sobě": 2.02
+   },
+   "xy": [
+    3.8,
+    0.8
+   ]
+  },
+  "p5": {
+   "n": 113,
+   "shares": {
+    "Spolu pro Prahu": 11.35,
+    "ANO": 3.08,
+    "Piráti": 21.63,
+    "STAN": 29.73,
+    "Praha sobě": 25.17,
+    "SPD a spol.": 7.75,
+    "Motoristé sobě": 1.29
+   },
+   "xy": [
+    6.2,
+    -0.9
+   ]
+  },
+  "p6": {
+   "n": 139,
+   "shares": {
+    "Spolu pro Prahu": 11.99,
+    "ANO": 4.38,
+    "Piráti": 18.18,
+    "STAN": 29.94,
+    "Praha sobě": 24.09,
+    "SPD a spol.": 8.36,
+    "Motoristé sobě": 3.05
+   },
+   "xy": [
+    4.4,
+    -0.5
+   ]
+  },
+  "p7": {
+   "n": 68,
+   "shares": {
+    "Spolu pro Prahu": 11.36,
+    "ANO": 4.68,
+    "Piráti": 22.55,
+    "STAN": 32.78,
+    "Praha sobě": 17.41,
+    "SPD a spol.": 7.72,
+    "Motoristé sobě": 3.5
+   },
+   "xy": [
+    5.0,
+    1.6
+   ]
+  },
+  "p8": {
+   "n": 110,
+   "shares": {
+    "Spolu pro Prahu": 11.47,
+    "ANO": 4.27,
+    "Piráti": 23.53,
+    "STAN": 31.2,
+    "Praha sobě": 19.29,
+    "SPD a spol.": 8.02,
+    "Motoristé sobě": 2.21
+   },
+   "xy": [
+    5.3,
+    0.5
+   ]
+  },
+  "p9": {
+   "n": 72,
+   "shares": {
+    "Spolu pro Prahu": 16.31,
+    "ANO": 5.98,
+    "Piráti": 17.03,
+    "STAN": 28.47,
+    "Praha sobě": 15.97,
+    "SPD a spol.": 12.22,
+    "Motoristé sobě": 4.03
+   },
+   "xy": [
+    2.4,
+    1.3
+   ]
+  }
+ },
+ "per_day": {
+  "2026-10-03": 1345,
+  "2026-10-04": 1170,
+  "2026-10-05": 621,
+  "2026-10-06": 251,
+  "2026-10-07": 111,
+  "2026-10-08": 209,
+  "2026-10-09": 132,
+  "2026-10-10": 9
+ },
+ "actual": null
+}
